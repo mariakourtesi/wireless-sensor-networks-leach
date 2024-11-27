@@ -1,0 +1,25 @@
+{
+  "name": "wireless-sensor-networks-leach",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "leach": "ts-node src/index.ts",
+    "build": "npx tsc",
+    "test": "jest",
+    "lint": "eslint .",
+    "fix-all": "eslint . --fix",
+    "format": "prettier --write ./**/*.{js,jsx,ts,md,json} --config ./.prettierrc.json"
+  },
+  "keywords": ["wireless sensor networks", "leach", "clustering", "protocol"],
+  "author": "Maria Kourtesi",
+  "license": "ISC",
+  "description": "Low Energy Adaptive Clustering Hierarchy (LEACH) protocol implementation in Wireless Sensor Networks",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2",
+    "@types/jest": "^29.5.14",
+    "eslint": "^9.15.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5"
+  }
+}
