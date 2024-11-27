@@ -13,7 +13,7 @@ interface ClusterNode extends NodeInNetwork{
 
 
 export const calculateThreshold = (p: number, round: number): number => {
-  return 1 - p * (round % Math.ceil(1 / p));
+  return p / (1 - p * (round % Math.ceil(1 / p)));
 };
 
 const setUpNodes = (numOfNodes: number, p: number, round: number): NodeInNetwork[] => {
