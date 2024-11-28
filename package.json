@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "bin": {
-    "leach": "./dist/index.js"
+    "wireless-network": "./dist/index.js"
   },
   "scripts": {
     "leach": "ts-node src/index.ts",

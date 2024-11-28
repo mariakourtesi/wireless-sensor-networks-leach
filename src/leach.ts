@@ -64,10 +64,21 @@ export const leachAlgorithm = (numOfNodes: number, p: number, rounds: number): C
   }
 
   for (let round = 1; round <= rounds; round++) {
- 
-    const nodesInCurrentRound = setUpNodes(numOfNodes, p, round);
+    let headNodes: NodeInNetwork[] = [];
+    let eligibleNodes: NodeInNetwork[] = [];
+    let excludedNodes: NodeInNetwork[] = [];
+    let nodesInCurrentRound: NodeInNetwork[];
 
-    const { eligibleNodes, headNodes, excludedNodes } = getEligibleHeadNodes(nodesInCurrentRound, p);
+    do {
+      
+      nodesInCurrentRound = setUpNodes(numOfNodes, p, round);
+
+      const partitionedNodes = getEligibleHeadNodes(nodesInCurrentRound, p);
+      eligibleNodes = partitionedNodes.eligibleNodes;
+      headNodes = partitionedNodes.headNodes;
+      excludedNodes = partitionedNodes.excludedNodes;
+    } while (headNodes.length === 0); 
+
 
     results.push({
       round,
