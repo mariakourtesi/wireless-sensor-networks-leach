@@ -92,5 +92,3 @@ export const leachAlgorithm = (numOfNodes: number, p: number, rounds: number): C
 
   return results;
 };
-
-console.log(leachAlgorithm(15, 0.2, 12));
